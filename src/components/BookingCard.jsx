@@ -2,8 +2,8 @@ import { useState } from "react";
 import { gym, days, findClass, coaches } from "../data/gym";
 
 const texts = {
-  en: { title: "Free trial class", confirm: "Confirm on WhatsApp", done: "Sent ✓ See you at APEX", msg: (c, d, t) => `Hi APEX, I'd like to book my free trial: ${c} on ${d} at ${t}.` },
-  ar: { title: "حصة تجريبية مجانية", confirm: "أكّد عالواتساب", done: "انبعت ✓ بنشوفك بـ APEX", msg: (c, d, t) => `مرحبا APEX، بدي أحجز حصتي المجانية: ${c} يوم ${d} الساعة ${t}.` },
+  en: { min: "min", title: "Free trial class", confirm: "Confirm on WhatsApp", done: "Sent ✓ See you at APEX", msg: (c, d, t) => `Hi APEX, I'd like to book my free trial: ${c} on ${d} at ${t}.` },
+  ar: { min: "د", title: "حصة تجريبية مجانية", confirm: "أكّد عالواتساب", done: "انبعت ✓ بنشوفك بـ APEX", msg: (c, d, t) => `مرحبا APEX، بدي أحجز حصتي المجانية: ${c} يوم ${d} الساعة ${t}.` },
 };
 
 // The booking ticket that appears inside the chat
@@ -23,7 +23,9 @@ export default function BookingCard({ booking, lang }) {
       <div className="flex gap-4 text-sm mt-2 font-semibold">
         <span>{day}</span>
         <span dir="ltr">{booking.time}</span>
-        <span>{c.minutes} min</span>
+        <span>
+          {c.minutes} {t.min}
+        </span>
       </div>
       <p className="text-xs mt-1 opacity-70">{ar ? coaches[c.coach].nameAr : coaches[c.coach].name}</p>
       <a

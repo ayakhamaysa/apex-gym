@@ -18,7 +18,12 @@ export default function Hero({ lang, onTrial }) {
         </p>
 
         {/* Each word slides up on its own */}
-        <h1 className="font-display uppercase leading-[0.88] text-[22vw] sm:text-[16vw] lg:text-[11rem] mt-6">
+        {/* Arabic needs more space between lines (dots and tall letters), and a little smaller size */}
+        <h1
+          className={`font-display uppercase mt-6 ${
+            lang === "ar" ? "leading-[1.15] text-[17vw] sm:text-[12vw] lg:text-[8.5rem]" : "leading-[0.88] text-[22vw] sm:text-[16vw] lg:text-[11rem]"
+          }`}
+        >
           {t.heroTitle.map((word, i) => (
             <motion.span
               key={word}

@@ -26,14 +26,20 @@ section {
   font-family: "IBM Plex Sans Arabic", sans-serif;
 }
 :root[lang="ar"] .font-display {
-  font-family: "IBM Plex Sans Arabic", sans-serif;
-  font-weight: 700;
+  /* Changa: a bold, tall Arabic font that matches Anton */
+  font-family: "Changa", sans-serif;
+  font-weight: 800;
 }
 
 /* Outline text (only the edge of the letters) */
 .text-outline {
   color: transparent;
   -webkit-text-stroke: 1.5px var(--color-bone);
+}
+/* Arabic letters join, so an outline shows the joins inside. Use a soft fill instead */
+:root[lang="ar"] .text-outline {
+  color: color-mix(in srgb, var(--color-bone) 35%, transparent);
+  -webkit-text-stroke: 0;
 }
 
 /* The strip of words that slides forever */

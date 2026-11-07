@@ -5,6 +5,8 @@ import "@fontsource/inter/400.css";
 import "@fontsource/inter/600.css";
 import "@fontsource/ibm-plex-sans-arabic/400.css";
 import "@fontsource/ibm-plex-sans-arabic/700.css";
+import "@fontsource/changa/700.css";
+import "@fontsource/changa/800.css";
 import "./index.css";
 import App from "./App.jsx";
 
